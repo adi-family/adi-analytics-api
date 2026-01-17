@@ -93,7 +93,7 @@ Analytics events are written by other services using `lib-analytics-core`:
 - **adi-platform-api**: API requests, tasks, integrations
 - **adi-auth-http**: Authentication events
 - **tarminal-signaling-server**: Cocoon connections
-- **cocoon-manager**: Cocoon orchestration
+- **hive**: Cocoon orchestration
 
 All events flow into `analytics_events` table, this API queries them.
 
