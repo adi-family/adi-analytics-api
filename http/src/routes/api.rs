@@ -1,5 +1,9 @@
 use adi_analytics_api_core::TimeRangeParams;
-use axum::{extract::{Query, State}, http::StatusCode, Json};
+use axum::{
+    Json,
+    extract::{Query, State},
+    http::StatusCode,
+};
 use sqlx::PgPool;
 
 pub async fn get_endpoint_latency(

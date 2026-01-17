@@ -33,3 +33,6 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 # Environment variables
 dotenvy = "0.15"
+
+# HTTP utilities
+lib-http-common = { path = "../../lib/lib-http-common" }

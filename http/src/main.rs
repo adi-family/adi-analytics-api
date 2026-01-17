@@ -1,6 +1,7 @@
 mod routes;
 
-use axum::http::{header, Method};
+use axum::http::{Method, header};
+use lib_http_common::version_header_layer;
 use sqlx::postgres::PgPoolOptions;
 use tower_http::{cors::CorsLayer, trace::TraceLayer};
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
@@ -34,6 +35,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Create router
     let app = routes::create_router(pool)
+        .layer(version_header_layer(
+            env!("CARGO_PKG_NAME"),
+            env!("CARGO_PKG_VERSION"),
+        ))
         .layer(
             CorsLayer::new()
                 .allow_origin(tower_http::cors::Any)
