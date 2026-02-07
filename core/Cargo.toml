@@ -1,5 +1,5 @@
 [package]
-name = "adi-analytics-api-core"
+name = "analytics-api-core"
 version = "0.1.0"
 edition = "2021"
 license = "BSL-1.0"
