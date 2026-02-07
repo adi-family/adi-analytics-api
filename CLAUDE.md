@@ -92,7 +92,7 @@ PORT=8093 DATABASE_URL=postgres://... cargo run
 Analytics events are written by other services using `lib-analytics-core`:
 - **adi-platform-api**: API requests, tasks, integrations
 - **adi-auth-http**: Authentication events
-- **tarminal-signaling-server**: Cocoon connections
+- **signaling-server**: Cocoon connections
 - **hive**: Cocoon orchestration
 
 All events flow into `analytics_events` table, this API queries them.
