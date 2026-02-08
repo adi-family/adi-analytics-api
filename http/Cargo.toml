@@ -1,16 +1,16 @@
 [package]
-name = "analytics-api-http"
+name = "analytics-http"
 version = "0.1.0"
 edition = "2021"
 license = "BSL-1.0"
 description = "HTTP server for ADI Analytics API"
 
 [[bin]]
-name = "analytics-api"
+name = "analytics-http"
 path = "src/main.rs"
 
 [dependencies]
-analytics-api-core = { path = "../core" }
+analytics-core = { path = "../core" }
 
 # Web framework
 axum = "0.8"

@@ -1,4 +1,4 @@
-adi-analytics-api, rust, axum, timescaledb, analytics, metrics
+adi-analytics, rust, axum, timescaledb, analytics, metrics
 
 ## Overview
 - Analytics API for ADI platform

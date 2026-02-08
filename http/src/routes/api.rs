@@ -1,4 +1,4 @@
-use analytics_api_core::TimeRangeParams;
+use analytics_core::TimeRangeParams;
 use axum::{
     Json,
     extract::{Query, State},
@@ -9,8 +9,8 @@ use sqlx::PgPool;
 pub async fn get_endpoint_latency(
     Query(params): Query<TimeRangeParams>,
     State(pool): State<PgPool>,
-) -> Result<Json<Vec<analytics_api_core::EndpointLatency>>, StatusCode> {
-    analytics_api_core::get_endpoint_latency(&pool, params.start_date, params.end_date)
+) -> Result<Json<Vec<analytics_core::EndpointLatency>>, StatusCode> {
+    analytics_core::get_endpoint_latency(&pool, params.start_date, params.end_date)
         .await
         .map(Json)
         .map_err(|e| {
@@ -21,8 +21,8 @@ pub async fn get_endpoint_latency(
 
 pub async fn get_slowest_endpoints(
     State(pool): State<PgPool>,
-) -> Result<Json<Vec<analytics_api_core::EndpointLatency>>, StatusCode> {
-    analytics_api_core::get_slowest_endpoints(&pool)
+) -> Result<Json<Vec<analytics_core::EndpointLatency>>, StatusCode> {
+    analytics_core::get_slowest_endpoints(&pool)
         .await
         .map(Json)
         .map_err(|e| {

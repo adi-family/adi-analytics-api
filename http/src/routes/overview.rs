@@ -3,8 +3,8 @@ use sqlx::PgPool;
 
 pub async fn get_overview(
     State(pool): State<PgPool>,
-) -> Result<Json<analytics_api_core::OverviewStats>, StatusCode> {
-    analytics_api_core::get_overview_stats(&pool)
+) -> Result<Json<analytics_core::OverviewStats>, StatusCode> {
+    analytics_core::get_overview_stats(&pool)
         .await
         .map(Json)
         .map_err(|e| {
